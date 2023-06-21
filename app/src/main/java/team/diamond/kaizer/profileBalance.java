@@ -34,7 +34,7 @@ public class profileBalance extends AppCompatActivity {
     DatabaseReference databaseRefBalanceInf;
 
     private SharedPreferences user_name_shared_preferences;
-    public String inkognito;
+    private String inkognito,inkognitoid;
 
     TextView profile_id, balance, you_payment_card_txt;
     LinearLayout requestpayment;
@@ -48,7 +48,8 @@ public class profileBalance extends AppCompatActivity {
         setContentView(R.layout.profile_balance);
 
         user_name_shared_preferences = getSharedPreferences("teen_pref", MODE_PRIVATE); //обяъвляем приватный режим для ОЧКОВ + прописываем ИМЯ в xml (чxml так и будет называться) + приватный режим
-        inkognito = user_name_shared_preferences.getString("teen_name", inkognito);// пишем ВПЕРЕДИ  т.к. код исполняется по порядку + в этом xml опять пишем наши очки под именем которое задаем save_key_count
+        inkognito = user_name_shared_preferences.getString("teen_name", inkognito);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
+        inkognitoid = user_name_shared_preferences.getString("teen_id", inkognitoid);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
 
 
         hooks();
@@ -73,7 +74,7 @@ public class profileBalance extends AppCompatActivity {
     }
 
     private void loadBalanceInf() {
-        databaseRefBalanceInf = firebaseDatabase.getReference("users").child(inkognito).child("balance"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
+        databaseRefBalanceInf = firebaseDatabase.getReference("usersInt").child(inkognitoid).child("balance"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
         // чтение из базы ValueEventListener
         databaseRefBalanceInf.addValueEventListener(new ValueEventListener() {
             @Override
@@ -91,7 +92,7 @@ public class profileBalance extends AppCompatActivity {
     //___________________________________________________________________________
 
     private void payoutinformationtxt() {
-        databaseReference2 = firebaseDatabase.getReference("users").child(inkognito).child("payment_card"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
+        databaseReference2 = firebaseDatabase.getReference("users").child(inkognitoid).child("payment_card"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
         databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -163,7 +164,7 @@ public class profileBalance extends AppCompatActivity {
                     HashMap<String, Object> result = new HashMap<>();
                     result.put(key, value);
 
-                    databaseReference.child(inkognito).updateChildren(result)
+                    databaseReference.child(inkognitoid).updateChildren(result)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {

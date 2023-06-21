@@ -53,7 +53,9 @@ import team.diamond.kaizer.models.UploadFree;
 public class foto_free extends AppCompatActivity implements ImageAdapterFree.OnItemClickListener {
 
     private SharedPreferences user_name_shared_preferences;
-    public String inkognito;
+    private String inkognito, inkognitoid;
+
+
     FirebaseDatabase firebaseDatabase;
     //указываем ссылки
     private DatabaseReference mDatabaseRef2;
@@ -86,14 +88,15 @@ public class foto_free extends AppCompatActivity implements ImageAdapterFree.OnI
 
         user_name_shared_preferences = getSharedPreferences("teen_pref", MODE_PRIVATE); //обяъвляем приватный режим для ОЧКОВ + прописываем ИМЯ в xml (чxml так и будет называться) + приватный режим
         inkognito = user_name_shared_preferences.getString("teen_name", inkognito);// пишем ВПЕРЕДИ  т.к. код исполняется по порядку + в этом xml опять пишем наши очки под именем которое задаем save_key_count
+        inkognitoid = user_name_shared_preferences.getString("teen_id", inkognitoid);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
 
         hooks();
         //init firebase
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         //указываем путь в fire storage
-        mStorageRef = FirebaseStorage.getInstance().getReference("FreeAlbum").child(inkognito);
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("FreeAlbum").child(inkognito);
+        mStorageRef = FirebaseStorage.getInstance().getReference("AlbumFree").child(inkognitoid);
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("AlbumFree").child(inkognitoid);
 
         //init progress dialog
         pd = new ProgressDialog(this);
@@ -111,7 +114,7 @@ public class foto_free extends AppCompatActivity implements ImageAdapterFree.OnI
 
         mStorage = FirebaseStorage.getInstance();
         // указываем путь к платному альбому
-        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("FreeAlbum").child(inkognito);
+        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("AlbumFree").child(inkognitoid);
 
         mDBListener = mDatabaseRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -299,7 +302,7 @@ public class foto_free extends AppCompatActivity implements ImageAdapterFree.OnI
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this, "нажмите и держите чтобы удалить фото " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "нажмите и держите чтобы удалить фото ", Toast.LENGTH_SHORT).show();
     }
 
 

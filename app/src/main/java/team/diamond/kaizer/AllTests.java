@@ -21,7 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import team.diamond.kaizer.adapters.addTestadapter;
 import team.diamond.kaizer.models.testModel;
 
 
@@ -30,7 +29,7 @@ public class AllTests extends AppCompatActivity {
 
     RecyclerView CustomTestRv;   //  лист всех белок которые зарешались
     DatabaseReference database;   //устанавливаем базу данных
-    addTestadapter AdapterCustomTest;    // прописываем адаптер
+//    addTestadapter AdapterCustomTest;    // прописываем адаптер
     ArrayList<testModel> list2;   //  сама схема (короткая)
 
     TextView startbasictest;
@@ -53,26 +52,26 @@ public class AllTests extends AppCompatActivity {
         CustomTestRv.setHasFixedSize(true);
         CustomTestRv.setLayoutManager(new LinearLayoutManager(this));
         list2 = new ArrayList<>();
-        AdapterCustomTest = new addTestadapter(this, list2);
-        CustomTestRv.setAdapter(AdapterCustomTest);  //устанавливаем адаптер
+//        AdapterCustomTest = new addTestadapter(this, list2);
+//        CustomTestRv.setAdapter(AdapterCustomTest);  //устанавливаем адаптер
 
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    //    String documentId = dataSnapshot.get();
-                    testModel add_test_shema = dataSnapshot.getValue(testModel.class);
-                    list2.add(add_test_shema);
-                }
-                AdapterCustomTest.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        database.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+//                    //    String documentId = dataSnapshot.get();
+//                    testModel add_test_shema = dataSnapshot.getValue(testModel.class);
+//                    list2.add(add_test_shema);
+//                }
+//                AdapterCustomTest.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
         startbasictest.setOnClickListener(new View.OnClickListener() {

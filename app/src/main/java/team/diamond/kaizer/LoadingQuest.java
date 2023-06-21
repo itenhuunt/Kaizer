@@ -33,7 +33,7 @@ public class LoadingQuest extends AppCompatActivity {
 
         //         тут прописываем ТОЖЕ самое что на сайте
      //  databaseReference = FirebaseDatabase.getInstance().getReference("BasicTest");
-        databaseReference = FirebaseDatabase.getInstance().getReference("random");
+        databaseReference = FirebaseDatabase.getInstance().getReference("BasicTest");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

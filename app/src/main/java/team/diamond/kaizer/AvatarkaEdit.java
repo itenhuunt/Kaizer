@@ -19,8 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -31,7 +34,7 @@ import com.squareup.picasso.Picasso;
 public class AvatarkaEdit extends AppCompatActivity {
 
     private SharedPreferences user_name_shared_preferences;
-    public String inkognito;
+    private String inkognito, inkognitoid;
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -54,12 +57,15 @@ public class AvatarkaEdit extends AppCompatActivity {
         setContentView(R.layout.avatarka_edit);
 
         user_name_shared_preferences = getSharedPreferences("teen_pref", MODE_PRIVATE); //обяъвляем приватный режим для ОЧКОВ + прописываем ИМЯ в xml (чxml так и будет называться) + приватный режим
-        inkognito = user_name_shared_preferences.getString("teen_name", inkognito);// пишем ВПЕРЕДИ  т.к. код исполняется по порядку + в этом xml опять пишем наши очки под именем которое задаем save_key_count
+        inkognito = user_name_shared_preferences.getString("teen_name", inkognito);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
+        inkognitoid = user_name_shared_preferences.getString("teen_id", inkognitoid);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
 
         hooks();
 
-        mStorageRef = FirebaseStorage.getInstance().getReference("avatarkiAll").child(inkognito);
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("users").child(inkognito).child("profile_pic");
+        mStorageRef = FirebaseStorage.getInstance().getReference("avatarkiAll").child(inkognitoid);
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("users").child(inkognitoid).child("profile_pic");
+
+        imageAva.setImageResource(R.drawable.bloody);
 
 
         // кнопка выбрать изображение  начало
@@ -86,8 +92,8 @@ public class AvatarkaEdit extends AppCompatActivity {
         });
         // кнопка загрузить изображение  конец
 
-
     }
+
 
     private void hooks() {
         mButtonChooseImage = findViewById(R.id.addAva);

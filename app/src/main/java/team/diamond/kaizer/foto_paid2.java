@@ -2,6 +2,7 @@ package team.diamond.kaizer;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -60,7 +61,7 @@ import team.diamond.kaizer.models.Upload;
 public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
 
     private SharedPreferences user_name_shared_preferences;
-    public String inkognito;
+    private String inkognito, inkognitoid;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -70,6 +71,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
     Button addpaidalbume;
     //progress dialog
     ProgressDialog pd;
+
 
     private static final int PICK_image_Request = 1;
 
@@ -107,6 +109,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
 
         user_name_shared_preferences = getSharedPreferences("teen_pref", MODE_PRIVATE); //обяъвляем приватный режим для ОЧКОВ + прописываем ИМЯ в xml (чxml так и будет называться) + приватный режим
         inkognito = user_name_shared_preferences.getString("teen_name", inkognito);// пишем ВПЕРЕДИ  т.к. код исполняется по порядку + в этом xml опять пишем наши очки под именем которое задаем save_key_count
+        inkognitoid = user_name_shared_preferences.getString("teen_id", inkognitoid);//  в этом xml опять пишем имя нашей белки  +  которое задаем значение teen_name
 
         hooks();
         //init firebase
@@ -114,8 +117,8 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
         databaseReference = firebaseDatabase.getReference("users");
 
         //указываем путь в fire storage
-        mStorageRef = FirebaseStorage.getInstance().getReference("paidAlbum").child(inkognito);
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("paidAlbum").child(inkognito);
+        mStorageRef = FirebaseStorage.getInstance().getReference("AlbumPaid").child(inkognitoid);
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("AlbumPaid").child(inkognitoid);
 
 
         //init progress dialog
@@ -137,7 +140,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
 
         mStorage = FirebaseStorage.getInstance();
         // указываем путь к платному альбому
-        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("paidAlbum").child(inkognito);
+        mDatabaseRef2 = FirebaseDatabase.getInstance().getReference("AlbumPaid").child(inkognitoid);
 
         mDBListener = mDatabaseRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -413,7 +416,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
         String fileName = formatter.format(now);
         // mStorageRefwtf = FirebaseStorage.getInstance().getReference("image3/" + fileName);
         // mStorageRefwtf = FirebaseStorage.getInstance().getReference("wtf").child(inkognito + fileName);
-        mStorageRefwtf = FirebaseStorage.getInstance().getReference("wtf").child(inkognito).child("paid/" + fileName);
+        mStorageRefwtf = FirebaseStorage.getInstance().getReference("wtf").child(inkognitoid).child("paid/" + fileName);
         mStorageRefwtf.putFile(image_uri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -431,7 +434,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
 
     //загружаем цену альбома
     private void paidalbuminf() {
-        databaseReference2 = firebaseDatabase.getReference("users").child(inkognito).child("paid_album"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
+        databaseReference2 = firebaseDatabase.getReference("users").child(inkognitoid).child("paid_album"); // вариант 3  типо прописали ссылку + родительский католог : что напротив него написано
         databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -499,7 +502,7 @@ public class foto_paid2 extends AppCompatActivity implements ImageAdapter.OnItem
                     HashMap<String, Object> result = new HashMap<>();
                     result.put(key, value);
 
-                    databaseReference.child(inkognito).updateChildren(result)
+                    databaseReference.child(inkognitoid).updateChildren(result)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {

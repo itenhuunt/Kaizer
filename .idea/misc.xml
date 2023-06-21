@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/btn_black95_press_white.xml" value="0.3025" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/kate.xml" value="0.335" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/lvl_profile.xml" value="0.2885" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/round_back_theeme_1000.xml" value="0.158" />
@@ -10,13 +11,24 @@
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/round_back_white_10.xml" value="0.158" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/rounded.xml" value="0.303" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/roundedver2.xml" value="0.303" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/start_test_style.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/start_test_style2.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/start_test_style3.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/style_btn_black95.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/style_btn_black95_press_white.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/style_start_test.xml" value="0.3025" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/vibostyle.xml" value="0.158" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable-v24/vibostyle2.xml" value="0.393" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/round_text.xml" value="0.323" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/round_text2.xml" value="0.3025" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/round_text3.xml" value="0.3025" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/thumb.xml" value="0.316" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/track.xml" value="0.316" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/drawable/vibostyle3.xml" value="0.4275" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_add_post.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_all_users.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_allpostalluser.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_allposts.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_images.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_main2.xml" value="0.32870837537840564" />
@@ -26,6 +38,8 @@
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_new.xml" value="0.32870837537840564" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_new2.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_profile_id.xml" value="0.5" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_true_story.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/activity_true_story_add.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/add_stories.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/add_test.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/add_test_card_shema.xml" value="0.36666666666666664" />
@@ -37,6 +51,8 @@
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/belka_full_infa_card_shema.xml" value="0.32870837537840564" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/creat_question.xml" value="0.32870837537840564" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/creat_test.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/dialogavashow.xml" value="0.25317028985507245" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/dialogend.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/foto_paid.xml" value="0.3619791666666667" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/foto_paid2.xml" value="0.33" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/foto_public.xml" value="0.32870837537840564" />
@@ -55,12 +71,14 @@
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/menutest.xml" value="0.3201311806256307" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/menutest2.xml" value="0.3333333333333333" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/profile_balance.xml" value="0.33" />
-        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/profile_id.xml" value="0.5" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/profile_id.xml" value="0.25" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/read_stories.xml" value="0.25" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/read_stories_full_infa_card_shema.xml" value="0.6609375" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/register.xml" value="0.32870837537840564" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/registerver1.xml" value="0.35260416666666666" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/registerver2.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/row_posts.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/row_true_story.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/start_belka.xml" value="0.32870837537840564" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/start_test.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/Kaizer/app/src/main/res/layout/start_testver2.xml" value="0.36666666666666664" />

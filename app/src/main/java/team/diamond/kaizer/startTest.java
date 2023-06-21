@@ -93,7 +93,7 @@ public class startTest extends AppCompatActivity {
                     // работает но с ошибками  может ве в ручную написать ?    отдельно каждый элемент
                     final String otvet1 = answer1.getText().toString();
                     final String vopros = universal_question.getText().toString();
-                    databaseReference.child("OTVET").child(vopros).child(inkognito).setValue(otvet1);
+                    databaseReference.child("BasicTestAnswer").child(vopros).child(inkognito).setValue(otvet1);
                     Correct();
                 } catch (Exception e) {
                     // пусто
@@ -107,7 +107,7 @@ public class startTest extends AppCompatActivity {
                 try {
                     final String otvet2 = answer2.getText().toString();
                     final String vopros = universal_question.getText().toString();
-                    databaseReference.child("OTVET").child(vopros).child(inkognito).setValue(otvet2);
+                    databaseReference.child("BasicTestAnswer").child(vopros).child(inkognito).setValue(otvet2);
                     Correct();
                 } catch (Exception e) {
                     // пусто
@@ -121,7 +121,7 @@ public class startTest extends AppCompatActivity {
                 try {
                     final String otvet3 = answer3.getText().toString();
                     final String vopros = universal_question.getText().toString();
-                    databaseReference.child("OTVET").child(vopros).child(inkognito).setValue(otvet3);
+                    databaseReference.child("BasicTestAnswer").child(vopros).child(inkognito).setValue(otvet3);
                     Correct();
                 } catch (Exception e) {
                     // пусто
@@ -240,7 +240,7 @@ public class startTest extends AppCompatActivity {
         }
         String myanswer = txtanswer4ver2.getText().toString();
         final String vopros = universal_question.getText().toString();
-        databaseReference.child("OTVET").child(vopros).child(inkognito).setValue(myanswer);
+        databaseReference.child("BasicTestAnswer").child(vopros).child(inkognito).setValue(myanswer);
         Correct();
     }
 

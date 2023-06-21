@@ -22,7 +22,7 @@
                 android:id="@+id/imageAva"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/bloody" />
 
             <ProgressBar
                 android:id="@+id/progress_bar"

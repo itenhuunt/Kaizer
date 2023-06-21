@@ -61,21 +61,21 @@ public class ImageAdapterFree extends RecyclerView.Adapter<ImageAdapterFree.Imag
                 .centerInside()  // второй вариант
                 .into(holder.imageView);
 
-        //  ОШИБКА В ЭТОМ КОДЕ !  НАЧАЛО!!!!!    альтернатива
-        //код перехода на новый лист
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, NewActivity2.class);
-                intent.putExtra("image@#", mUploads.get(position).getImageUrl());
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                mContext.startActivity(intent);
-            }
-        });
-
+//        //  ОШИБКА В ЭТОМ КОДЕ !  НАЧАЛО!!!!!    альтернатива
+//        //код перехода на новый лист
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(mContext, NewActivity2.class);
+//                intent.putExtra("image@#", mUploads.get(position).getImageUrl());
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                mContext.startActivity(intent);
+//            }
+//        });
+//        //  ОШИБКА В ЭТОМ КОДЕ !  КОНЕЦ
 
     }
-    //  ОШИБКА В ЭТОМ КОДЕ !  КОНЕЦ
+
 
 
     @Override
