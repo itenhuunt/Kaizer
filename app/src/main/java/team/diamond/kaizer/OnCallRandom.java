@@ -35,14 +35,9 @@ import team.diamond.kaizer.models.User;
 public class OnCallRandom extends AppCompatActivity {
 
     ImageView profile, connectingImage, videoBtn, micBtn, endCall;
-
     TextView name, city;
-
     WebView webView;
-
-
     androidx.constraintlayout.widget.Group loadingGroup, controls;
-
 
     String uniqueId = "";
     FirebaseAuth auth;
@@ -70,7 +65,7 @@ public class OnCallRandom extends AppCompatActivity {
 
         firebaseRef = FirebaseDatabase.getInstance().getReference().child("randomCall");
 
-        username = getIntent().getStringExtra("username"); //  аоткуда я их вытащю еслти я их не засовывал ???
+        username = getIntent().getStringExtra("username"); //  а откуда я их вытащю еслти я их не засовывал ???
         String incoming = getIntent().getStringExtra("incoming");
         createdBy = getIntent().getStringExtra("createdBy");
 
@@ -113,7 +108,7 @@ public class OnCallRandom extends AppCompatActivity {
         endCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  finish();
+                finish();
                 firebaseRef.child(createdBy).setValue(null);
                 Intent intent = new Intent(OnCallRandom.this, kaizerActivity.class); // try = попытка
                 startActivity(intent);
@@ -174,7 +169,7 @@ public class OnCallRandom extends AppCompatActivity {
             firebaseRef.child(username).child("connId").setValue(uniqueId);
             firebaseRef.child(username).child("isAvailable").setValue(true); // isAvailable =  доступен
 
-//            binding.loadingGroup.setVisibility(View.GONE);
+            loadingGroup.setVisibility(View.GONE);
 //            binding.controls.setVisibility(View.VISIBLE);
             // т.е.  кто начал трансляцию у него будет пусто имя и город
             // прогрузиться только у того кто второй !!!!
@@ -269,10 +264,11 @@ public class OnCallRandom extends AppCompatActivity {
                 if (snapshot.getValue() == null)
                     return;
 
+                //ТУТ !  04.07
                 //я не знаю как корректо прописать инвиз
                 loadingGroup.setVisibility(View.GONE);
                 //  controls.setVisibility(View.VISIBLE);
-                controls.setVisibility(View.GONE);
+                controls.setVisibility(View.VISIBLE);
                 String connId = snapshot.getValue(String.class);
                 callJavaScriptFunction("javascript:startCall(\"" + connId + "\")");
             }

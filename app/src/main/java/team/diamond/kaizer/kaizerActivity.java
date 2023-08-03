@@ -31,11 +31,11 @@ public class kaizerActivity extends AppCompatActivity {
     private SharedPreferences user_name_shared_preferences;
     private String inkognito, inkognitoid;
 
-    ImageView profileImg;
+    ImageView profileImg, add;
     LottieAnimationView videoStream;
-    TextView infAll, addPost, allpost;
+    TextView infAll, addPost, allpost, zegocloud;
 
-    LinearLayout basictest, readStories, add, job, recentlyJoined;
+    LinearLayout basictest, readStories,  job, recentlyJoined;
     ProgressDialog progressDialog;
 
     FirebaseDatabase database; //  сама Firebase
@@ -160,6 +160,23 @@ public class kaizerActivity extends AppCompatActivity {
 
 
 
+        zegocloud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(kaizerActivity.this, Zegocloud.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    //empty
+                }
+
+            }
+        });
+
+
+
+
     }
 
     //загружаем  информацию для всех в случае чего
@@ -218,6 +235,7 @@ public class kaizerActivity extends AppCompatActivity {
         infAll = findViewById(R.id.Infall);
         addPost = findViewById(R.id.addPost);
         allpost = findViewById(R.id.allpost);
+        zegocloud = findViewById(R.id.zegocloud);
 
     }
 

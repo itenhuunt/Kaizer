@@ -53,4 +53,9 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_live_streaming_android:latest.release'
+
+
+
 }

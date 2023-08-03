@@ -7,11 +7,21 @@
     tools:context=".OnCallRandom">
 
 
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
 
+    </WebView>
+
+    <ImageView
+        android:id="@+id/connectingImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_x="50dp"
+        android:layout_y="30dp"
+        app:srcCompat="@drawable/man" />
 
 
     <ImageView
@@ -61,15 +71,15 @@
             android:id="@+id/profile"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:src="@drawable/demo_user" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -91,15 +101,6 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/connectingImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/man" />
-
     <androidx.constraintlayout.widget.Group
         android:id="@+id/controls"
         android:layout_width="wrap_content"
@@ -111,8 +112,18 @@
         android:id="@+id/loadingGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
         app:constraint_referenced_ids="connectingImage" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/fg2jf"
+        android:layout_width="75dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/heartlive" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
